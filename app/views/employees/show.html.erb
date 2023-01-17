@@ -1,0 +1,8 @@
+<p><%= @employee.name %></p>
+<p><%= @employee.department.name %></p>
+<% @employee.tickets.each do |t| %>
+  <% if t.open == true %>
+    <p><% t.subject %></p>
+    <p><% t.age %></p>
+  <% end %>
+<% end %>
