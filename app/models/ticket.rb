@@ -2,5 +2,6 @@ class Ticket < ApplicationRecord
   validates_presence_of :subject,
                         :age,
                         :open
-  belongs_to :employee
+  has_many :employee_tickets
+  has_many :employees, through: :employee_tickets
 end
