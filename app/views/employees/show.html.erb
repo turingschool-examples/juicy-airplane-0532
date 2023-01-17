@@ -1,0 +1,11 @@
+<h1><%= @employee.name %></h1>
+
+<h3>Department: <%= @employee.department.name %> </h3>
+<h3>Open Tickets: </h3> 
+<p><% @employee.open_tickets.each do |et| %></p>
+  <div id="tix-<%=et.id%>">
+    <p> Subject: <%= et.subject %> </p>
+    <p> Age: <%= et.age %> </p>
+    <p><%= button_to "Unassign Ticket", employee_ticket_path(et.id), method: :delete, params: {employee_id: @employee.id} %></p>
+  <% end %>
+  </div>
