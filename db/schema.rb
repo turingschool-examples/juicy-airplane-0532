@@ -25,6 +25,8 @@ ActiveRecord::Schema.define(version: 2023_01_17_163209) do
   create_table "employee_tickets", force: :cascade do |t|
     t.bigint "employee_id"
     t.bigint "ticket_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["employee_id"], name: "index_employee_tickets_on_employee_id"
     t.index ["ticket_id"], name: "index_employee_tickets_on_ticket_id"
   end
@@ -42,6 +44,8 @@ ActiveRecord::Schema.define(version: 2023_01_17_163209) do
     t.string "subject"
     t.integer "age"
     t.boolean "open"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   add_foreign_key "employee_tickets", "employees"
