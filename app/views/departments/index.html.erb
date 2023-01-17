@@ -1,0 +1,7 @@
+<% @departments.each do |d|%>
+ <p><%= d.name %></p>
+ <p><%= d.floor %></p>
+  <% d.employees.each do |e| %>
+    <p><%= e.name %></p>
+  <% end %>
+<% end %>
