@@ -17,7 +17,6 @@ RSpec.describe 'Department index page' do
       # # As a user,
       # # When I visit the Department index page,
       visit departments_path
-      # binding.pry
       
       expect(page).to have_content(@dept1.name)
       expect(page).to have_content(@dept2.name)
