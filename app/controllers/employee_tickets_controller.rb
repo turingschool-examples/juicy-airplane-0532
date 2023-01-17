@@ -1,9 +1,9 @@
 class EmployeeTicketsController < ApplicationController
 
   def destroy
-    employee_ticket = EmployeeTicket.find(params[:ticket])
+    employee_ticket = EmployeeTicket.find_by(ticket_id: params[:id], employee_id: params[:employee_id])
+    employee = Employee.find(params[:employee_id])
     employee_ticket.destroy
-    binding.pry
     redirect_to employee_path(employee)
   end
   

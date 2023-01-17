@@ -68,7 +68,8 @@ RSpec.describe 'Employee show page' do
       within "#tix-#{@tix3.id}" do
         expect(page).to have_button("Unassign Ticket")
         # # When I click this link/button,
-        save_and_open_page
+        # save_and_open_page
+        # binding.pry
         click_on "Unassign Ticket"
         
         # # Then I am redirected back to that employee's show page

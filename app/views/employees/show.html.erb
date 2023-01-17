@@ -6,6 +6,6 @@
   <div id="tix-<%=et.id%>">
     <p> Subject: <%= et.subject %> </p>
     <p> Age: <%= et.age %> </p>
-    <p><%= button_to "Unassign Ticket", method: :destroy %></p>
+    <p><%= button_to "Unassign Ticket", employee_ticket_path(et.id), method: :delete, params: {employee_id: @employee.id} %></p>
   <% end %>
   </div>
