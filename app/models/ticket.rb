@@ -4,8 +4,4 @@ class Ticket < ApplicationRecord
                         # :open, :inclusion => [true, false]
   has_many :employee_tickets
   has_many :employees, through: :employee_tickets
-  
-  
-  
-  
 end

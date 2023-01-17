@@ -8,16 +8,11 @@ class Employee < ApplicationRecord
   
   
   def self.tickets
-    tix = EmployeeTicket.where("employee > ?", self.id)
-    
-    tix.each do |t|
-      binding.pry
-      Ticket.where("ticket > ?", t.id).where("open > ?", true)
-    end
+    tix = EmployeeTicket.find_by("employee = ?", self.id)
   end
   
-  # def self.open_tickets
-  #   self.tickets.where("open > ?", true)
-  # end
+  def open_tickets
+    tickets.where("open = ?", true).order(age: :desc)
+  end
   
 end
