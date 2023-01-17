@@ -43,7 +43,7 @@ ActiveRecord::Schema.define(version: 2023_01_17_163209) do
   create_table "tickets", force: :cascade do |t|
     t.string "subject"
     t.integer "age"
-    t.boolean "open"
+    t.boolean "open", default: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -1,0 +1,11 @@
+<h1><%= @employee.name %></h1>
+
+<h3>Department: <%= @employee.department.name %> </h3>
+<h3>Open Tickets: </h3> 
+<% binding.pry %>
+<p><% @employee.tickets.each do |et| %></p>
+  <div id="tix-<%=et.id%>">
+    <p> Subject: <%= et.ticket.subject %> </p>
+    <p> Age: <%= et.ticket.age %> </p>
+  <% end %>
+  </div>
